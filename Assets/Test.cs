@@ -18,7 +18,7 @@ public class Boss {
 		}
 	    // 魔法用の関数
 	    public void Magic() { 
-		for(int i=0;i<11;i++){
+		
 		if (mp >= 5) {
 			//残りmpを減らす
 			this.mp -= 5;
@@ -28,12 +28,29 @@ public class Boss {
 		}
 	}
 }
-}
+
+
 		public class Test : MonoBehaviour {
 
- 
-			void Start () {
-				// Bossクラスの変数を宣言してインスタンスを代入
+	void Start () {
+				
+		// 要素数5の配列を初期化する
+		int[] points = new int[6];
+		// 配列の各要素に値を代入する
+		points [1] = 20;
+		points [2] = 50;
+		points [3] = 10;
+		points [4] = 80;
+		points [5] = 30;
+		//順番に並べる
+    	for (int j = 1; j < 6; j++) {
+				Debug.Log (points [j]);
+			}
+		//逆順に並べる
+		for (int k = 5; k >0; k--) {
+			Debug.Log (points [k]);
+		}
+		// Bossクラスの変数を宣言してインスタンスを代入
 				Boss lastboss = new Boss ();
 
 				// 攻撃用の関数を呼び出す
@@ -41,9 +58,11 @@ public class Boss {
 				// 防御用の関数を呼び出す
 				lastboss.Defence(3);
 				//魔法用の関数を呼び出す
-				lastboss.Magic();
+		for(int i=0;i<11;i++){
+			lastboss.Magic();
+		
 			}
-
+	}
 			// Update is called once per frame
  
 			void Update () {
